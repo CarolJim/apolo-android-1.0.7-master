@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutCapture"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:id="@+id/camera_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_preview">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:id="@+id/camera_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10">
+
+            <!-- <LinearLayout
+                android:background="@drawable/transparent_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"></LinearLayout> -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8.5"
+                android:weightSum="1"
+                android:gravity="center">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/transparent_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/action_close"
+                        app:srcCompat="@drawable/ic_cerrar_ap"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="center"
+                        android:layout_width="@dimen/ic_cameras_width"
+                        android:layout_height="@dimen/ic_cameras_width"
+                        android:layout_marginLeft="@dimen/dimen_margin_xxl" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/action_capture"
+                        android:layout_width="@dimen/ic_capture_width"
+                        android:layout_height="@dimen/ic_capture_height"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/ic_take_ap"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:scaleType="fitCenter"
+                        android:rotation="90"
+                        android:id="@+id/action_save"
+                        android:layout_width="@dimen/ic_cameras_width"
+                        android:layout_height="@dimen/ic_cameras_height"
+                        tools:ignore="VectorDrawableCompat"
+                        app:srcCompat="@drawable/ic_done_ap"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/action_reintent"
+                        app:srcCompat="@drawable/ic_retake_ap"
+                        android:scaleType="fitCenter"
+                        android:layout_width="@dimen/ic_cameras_width"
+                        android:layout_height="@dimen/ic_cameras_width"
+                        android:layout_marginRight="@dimen/dimen_margin_xxl"
+                        android:rotation="90"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:scaleType="fitXY"
+            android:id="@+id/turn_camera"
+            android:background="@drawable/turn_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+
+    </FrameLayout>
+
+    <include layout="@layout/progress_view_activity" />
+
+ </FrameLayout>

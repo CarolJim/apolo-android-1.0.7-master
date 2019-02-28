@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black_preview">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10">
+
+        <!--<View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/transparent_navigation"
+            android:layout_alignParentTop="true"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8.5"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <FrameLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/activity_image_preview_iv_picture"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/transparent_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/activity_image_preview_iv_close"
+                android:layout_width="@dimen/ic_preview_size"
+                android:layout_height="@dimen/ic_preview_size"
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="@dimen/dimen_margin_xxl"
+                app:srcCompat="@drawable/ic_cerrar_ap"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/activity_image_preview_iv_delete"
+                android:rotation="90"
+                android:layout_width="@dimen/ic_preview_size"
+                android:layout_height="@dimen/ic_preview_size"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="@dimen/dimen_margin_xxl"
+                app:srcCompat="@drawable/ic_delete"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

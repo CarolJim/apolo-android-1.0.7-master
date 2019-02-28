@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF149B</color>
+    <color name="colorPrimaryDark">#C6006D</color>
+    <color name="colorAccent">#FF149B</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="colorHint">#ababab</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorText">#1d1d1b</color>
+    <color name="teal">#d2d2d2</color>
+    <color name="colorBtn">#9b9b9b</color>
+    <color name="colorCursor">#50000000</color>
+    <color name="layer_cardview">#c6c6c6</color>
+    <color name="txtRecyclerView">#60000000</color>
+
+    <color name="orange_red">#fe3824</color>
+    <color name="black_preview">#303030</color>
+    <color name="white">#ffffff</color>
+    <color name="gray_inactive">#EBEBEB</color>
+
+    <color name="transparentGrayBG">#CC000000</color>
+    <color name="bg_app">#fafafa</color>
+    <color name="colorLowGray">#42000000</color>
+
+    <color name="colorBackgroundProgressFragment">#b9ffffff</color>
+    <color name="viewPagerTextColor">#4B4A48</color>
+    <color name="colorPrimaryLow">#348d1327</color>
+    <color name="colorRoundedImage">#d9a120</color>
+    <color name="grayTextColor">#4B4A48</color>
+</resources>

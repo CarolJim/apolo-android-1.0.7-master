@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutReset"
+    android:background="@color/bg_app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ResetContraseniaUser">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/dimen_margin_medium"
+            android:layout_marginRight="@dimen/dimen_margin_medium"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <com.pagatodo.apolo.utils.customviews.MaterialTextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/dimen_textSize_large"
+                    android:padding="@dimen/dimen_padding_xl"
+                    android:layout_margin="@dimen/dimen_margin_medium"
+                    android:text="@string/ingresa_una_nueva_contrase_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    app:tipo="Titulo"/>
+            </LinearLayout>
+            <!-- Nueva contraseña -->
+            <com.pagatodo.apolo.utils.customviews.MaterialValidationEditText
+                android:id="@+id/edtPassNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_border_login"
+                android:gravity="center"
+                android:padding="@dimen/dimen_padding_medium"
+                app:formato="pwtext"
+                app:hintColor="@color/colorText"
+                app:hintText="Nueva contraseña." />
+            <!-- Confirmar contraseña -->
+            <com.pagatodo.apolo.utils.customviews.MaterialValidationEditText
+                android:id="@+id/edtPassConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_border_login"
+                android:gravity="center"
+                android:padding="4dp"
+                app:formato="pwtext"
+                app:hintColor="@color/colorText"
+                app:hintText="Confirma tu contraseña."/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+            <!-- Boton Login  -->
+            <com.pagatodo.apolo.utils.customviews.MaterialButton
+                android:id="@+id/btnChangePass"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="24dp"
+                android:text="@string/txt_button_continue"
+                app:buttonNormalColor="@color/teal"
+                app:buttonStrokeColor="@color/teal"
+                app:cornerRadius="@dimen/dimen_button_radius"
+                app:hintColor="@color/white"
+                app:intercepterOnclick="true"
+                app:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

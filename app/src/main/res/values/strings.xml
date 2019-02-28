@@ -1,0 +1,193 @@
+<resources>
+    <!-- GENERAL -->
+    <string name="app_name">Apolo</string>
+
+    <!-- Registro -->
+    <string name="name_agente">Afiliador</string>
+    <string name="name_agente_format">%1$s %2$s %3$s</string>
+
+    <string name="editText_celular">Ingresa el Número de Celular</string>
+    <string name="editText_telefono">Ingresa el Número de Casa</string>
+    <string name="txt_card">TARJETA</string>
+    <string name="txt_ine_front">INE FRENTE</string>
+    <string name="txt_ine_back">INE VUELTA</string>
+
+    <!-- error_view_activity_activity.xml -->
+    <string name="txt_errorText">Ocurrió un Error, al Hacer la Consulta\nIntentelo mas Tarde.</string>
+    <string name="not_permission">Lo Sentimos, no Puedes Usar Esta Aplicación sin Conceder Permiso.</string>
+
+    <!-- Buttons -->
+    <string name="txt_button_cancel">CANCELAR</string>
+    <string name="txt_button_continue">CONTINUAR</string>
+    <string name="txt_button_register">NUEVA SOLICITUD CREDITO</string>
+    <string name="txt_button_query">CONSULTAR SOLICITUD CREDITO</string>
+    <string name="txt_button_login">INGRESAR</string>
+    <string name="txt_button_end">FINALIZAR</string>
+    <string name="txt_button_reenviar">REENVIAR</string>
+    <string name="txt_btn_reintent">REINTENTAR</string>
+
+    <!-- MaterialValidationEditText -->
+    <!-- EditTexts -->
+    <string name="hint_name">Nombre</string>
+
+    <!-- Restricciones para los editText -->
+    <string name="input_phone">0123456789</string>
+    <string name="input_int_unsigned">0123456789</string>
+    <string name="input_int">-0123456789</string>
+    <string name="input_decimal">-.0123456789</string>
+    <string name="valid_phonenumber">Teléfono Válido</string>
+    <string name="valid_field">El Campo es Válido</string>
+    <string name="invalid_phonenumber">Teléfono Inválido</string>
+    <string name="invalid_field">El Campo es Inválido</string>
+    <string name="invalid_field_numero_usuario">El Número de Usuario es Inválido</string>
+    <string name="valid_mail">Correo Válido</string>
+    <string name="valid_pass">Contraseña Válida</string>
+    <string name="empty_mail">El Campo Correo no Debe Estar Vacío</string>
+    <string name="invalid_mail">Correo Inválido</string>
+    <string name="invalid_pass">La Contraseña Debe Contener al Menos una Mayuscula, un Número y un Mínimo de 6 Caracteres.</string>
+
+    <!--Validaciones-->
+    <string name="msg_field_empty">Todos los Campos son Obligatorios</string>
+    <string name="msg_nombre_valido">Por Favor Ingresa un Nombre Válido.</string>
+    <string name="msg_primer_apellido_valido">Por Favor Ingresa tu Primer Apellido.</string>
+    <string name="msg_segundo_apellido_valido">Por Favor Ingresa tu Segundo Apellido.</string>
+    <string name="msg_telefono_valido_format">El Teléfono es Invalido.</string>
+    <string name="msg_session">Has Iniciado Sesión en Otro Dispositivo.</string>
+    <string name="msg_valid_remail">Los Correos Coinciden.</string>
+    <string name="msg_invalid_remail">Los Correos no Coinciden.</string>
+    <string name="msg_valid_rephone">Los Teléfonos Coinciden.</string>
+    <string name="msg_invalid_rephone">Los Teléfonos no Coinciden.</string>
+    <string name="msg_valid_repass">Las Contraseñas Coinciden.</string>
+    <string name="msg_invalid_repass">Las Contraseñas no Coinciden.</string>
+    <string name="msg_valid_refield">Los Campos Coinciden.</string>
+    <string name="msg_invalid_refield">Los Campos no Coinciden.</string>
+    <string name="not_compatible_camera">¡Lo Siento! tu Dispositivo no es Compatible con la Cámara</string>
+    <string name="changed_configuration">Cambio de Configuración</string>
+    <string name="saved">Guardado</string>
+    <string name="msg_update_afiliados">Actualizando Promotores.</string>
+    <string name="msg_update_iniciativas">Actualizando Iniciativas.</string>
+    <string name="msg_update_tiendas">Actualizando Tiendas.</string>
+    <string name="not_internet">Sin Internet</string>
+    <string name="error">Error</string>
+    <string name="delete">Eliminar</string>
+    <string name="not_have_promotores">No hay Promotores</string>
+    <string name="not_have_iniciativas">No hay Iniciativas</string>
+    <string name="not_have_tiendas">No hay Tiendas</string>
+    <string name="not_search_promotores">No se han Encontrado Promotores en la Base de Datos</string>
+    <string name="not_search_iniciativas">No se han Encontrado Iniciativas en la Base de Datos</string>
+    <string name="not_search_tiendas">No se han Encontrado Tiendas en la Base de Datos</string>
+
+    <!-- Camara -->
+    <string name="unable_camera">No se Puede Abrir la Cámara.</string>
+    <string name="unable_to_save">No se Puede Guardar la Imagen en el Archivo.</string>
+    <string name="save_to">Guardado en:</string>
+    <string name="confirmate_delete">¿Seguro que Deseas Borrar Esta Imagen?</string>
+    <string name="error_capture">"Ocurrió un Error al Tomar la Foto"</string>
+    <string name="turn_camera">Por Favor Gira tu Teléfono Para Capturar la Foto</string>
+
+    <!-- WS errors -->
+    <string name="network_error">Verifica tu Conexión a Internet.</string>
+
+    <!-- Activity Confirmate -->
+    <string name="txt_folio">Anota el Número de Solicitud de Crédito</string>
+    <string name="folio_generado">%1$s</string>
+    <string name="pin_label_text">Código</string>
+
+    <!-- Activity SMS -->
+    <string name="verificando_celular">Verificando Número Celular</string>
+    <string name="codigo_sms">Te Enviamos un SMS con el Código de Verificación</string>
+    <string name="ingresa_codigo">Ingresa el Código de Verificación</string>
+
+    <!-- Dialogs -->
+    <string name="txt_title">AVISO</string>
+    <string name="dialog_title_aviso">Aviso</string>
+    <string name="dialog_text_next">Continuar</string>
+    <string name="dialog_text_cancel">Cancelar</string>
+    <string name="dialog_text_accept">Aceptar</string>
+    <string name="dialog_text_send">Enviar</string>
+    <string name="dialog_title_mail_confirmation">Confirma tu Correo</string>
+    <string name="dialog_text_mail_confirmation">Te Hemos Enviado un Link Para\nConfirmar tu Correo.</string>
+    <string name="dialog_title_pass">Restablecer Contraseña</string>
+    <string name="dialog_text_pass">Te Hemos Enviado un Link Para\nRestablecer tu Contraseña.</string>
+    <string name="dialog_text_resend_email">Te Hemos Enviado un Link Para\nRestablecer tu Contraseña.</string>
+    <string name="dialog_text_change_mail">Ingresa tu Cuenta de Correo Electrónico</string>
+    <string name="dialog_title_change_mail">Modificar Correo</string>
+    <string name="dialog_title_resemd_mail">Reenviar Correo</string>
+    <string name="dialog_title_contact">Contacto</string>
+    <string name="dialog_hint_title">Ingresa Titulo</string>
+    <string name="dialog_hint_message">Ingresa tu Mensaje</string>
+    <string name="dialog_status_upload">Procesando\n%1$d de %2$d</string>
+    <string name="dialog_status_title">REALIZANDO REGISTRO</string>
+    <string name="dialog_status_success">Se han Guardado sus Documentos.</string>
+    <string name="dialog_status_success_count">Completados %1$d de %2$d</string>
+    <string name="dialog_status_failure">Ocurrió un Error al Cargar los Archivos.</string>
+    <string name="menu_end_session">Cerrar Sesión</string>
+
+    <!-- IEventOnView -->
+    <string name="progress_wait">Espera por Favor.</string>
+    <string name="progress_validate_card">Validando Tarjeta…</string>
+    <string name="progress_registrando_usuario">Registrando Usuario…</string>
+    <string name="progress_login">Iniciando Sesión…</string>
+    <string name="progress_logout">Saliendo…</string>
+    <string name="txt_progressText">Espera por Favor</string>
+    <string name="progress_send_code">Enviando Código de Verificación</string>
+    <string name="progress_verify">Verificando</string>
+
+    <!-- Sharing Options-->
+    <string name="whatsapp_sharing_not_found_msg">Para Continuar, Necesitas Instalar la Aplicación WhatsApp.</string>
+
+    <!-- Run Time Permissions Msgs -->
+    <string name="general_run_time_message">Para que tu Experiencia Dentro de la Aplicación sea Completa, Activa los Siguientes Permisos:</string>
+    <string name="runtime_camera">Hacer uso de la Cámara (Necesario Para la Captura de Documentos).</string>
+    <string name="runtime_sms">Leer tu Bandeja SMS (Requerido Para Obtener el Código de Confirmación).</string>
+    <string name="runtime_storage">Guardar Información en el Dispositivo (Esencial Para el Registro de Documentos).</string>
+    <string name="run_time_enable_permissions_btn_lbl">Habilitar Permisos</string>
+    <string name="run_time_continue_anyway_btn_lbl">Continuar</string>
+
+    <string name="error_invalid_id">Usuario Invalido.</string>
+    <string name="error_empty_id_afiliador">Ingresa tu Usuario.</string>
+    <!-- errores de contraseña -->
+    <string name="error_empty_pass_afiliador">Ingresa tu Contraseña.</string>
+    <string name="error_min_id_afiliador">Tú Usuario es muy Corto.</string>
+    <!-- yoooooo -->
+    <string name="error_min_pass_afiliador">Tú Contraseña es muy Corta.</string>
+
+    <string name="error_inactive_promotor">Tú Usuario no se Encuentra Activo.</string>
+    <string name="error_iniciativas_empty">No Cuentas con Iniciativas.</string>
+    <string name="error_tiendas_empty">No Cuentas con Tiendas.</string>
+    <string name="error_phone_empty">El Teléfono no Puede Estar Vacio.</string>
+    <string name="error_cellphone_empty">El Teléfono Celular no Puede Estar Vacio.</string>
+    <string name="error_number_validate">Por Favor Ingrese un Número Teléfonico.</string>
+    <string name="error_cellphone_invalid">El Numero Celular es Invalido.</string>
+    <string name="error_listaDocumentoVacio">El Documento %1$s no se ha Capturado.</string>
+    <string name="error_codigo_empty">El Código de Verificación Debe Contener 6 Dígitos.</string>
+    <string name="error_codigo_invalid">El Código de Verificación es Invalido.</string>
+    <string name="error_network_problem">Ocurrió un Error de Conexión. Favor de Intentar más Tarde. </string>
+
+    <!--Template docs-->
+    <string name="template_doc_ine_frente">ine_frente_%1$s.jpg</string>
+    <string name="template_doc_ine_reverso">ine_reverso_%1$s.jpg</string>
+    <string name="template_doc_adulto_mayor">adulto_mayor_%1$s.jpg</string>
+    <string name="template_doc_credito_simple">credito_simple_%1$s.jpg</string>
+    <string name="template_doc_comprobante_domicilio">comprobante_domicilio_%1$s.jpg</string>
+    <string name="template_doc_otra_frente">otra_frente_%1$s.jpg</string>
+    <string name="template_doc_otra_reverso">otra_reverso_%1$s.jpg</string>
+    <string name="comprobante_domicilio">COMPROBANTE DOMICILIO</string>
+    <string name="otra_identificacion_frente">OTRA IDENTIFICACIÓN FRENTE</string>
+    <string name="otra_identificacion_reverso">OTRA IDENTIFICACIÓN REVERSO</string>
+    <!-- txt btns-->
+    <string name="txt_reintent">Reintentar</string>
+    <string name="txt_exit">Salir</string>
+    <string name="txt_confirmate">Confirmar</string>
+    <string name="txt_cancel">Cancelar</string>
+
+    <!--WebView-->
+    <string name="action_back">Regresar</string>
+
+    <!-- CheckIDP -->
+    <string name="hint_verify_idp">Ingresa IDP</string>
+    <string name="text_verify_idp">Ingresa IDP</string>
+    <string name="error_min_idp">El IDP es muy Corto</string>
+    <string name="validate_idp_message">Validando IDP</string>
+    <string name="ingresa_una_nueva_contrase_a">INGRESA UNA NUEVA CONTRASEÑA</string>
+</resources>

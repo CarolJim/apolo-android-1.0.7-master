@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pagatodo.apolo">
+    <!-- Accessing camera hardware -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.ResetContraseniaUser"></activity>
+        <!-- Activity Splash Start -->
+        <activity
+            android:name=".activity.splash.SplashActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Activity Login -->
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- Activity Main -->
+        <activity
+            android:name=".activity.register.RegisterActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- Activity Capture -->
+        <activity
+            android:name=".activity.CaptureActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait" /> <!-- Activity Preview -->
+        <activity
+            android:name=".activity.PreviewImageActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait" /> <!-- Activity SMS -->
+        <activity
+            android:name=".activity.smsverification.SmsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- Activity Confirmate Folio -->
+        <activity
+            android:name=".activity.ConfirmateActivity"
+            android:screenOrientation="portrait" /> <!-- Activity Menu -->
+        <activity
+            android:name=".activity.MenuActivity"
+            android:screenOrientation="portrait" /> <!-- Activity WebView -->
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver android:name=".receiver.ReceiverSms">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".data.remote.notifications.FCMService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".data.remote.notifications.FCMTokenService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="6586b24eda23982e86678c62a9df721f3aed82b0" />
+
+        <activity android:name=".activity.CheckIDP.CheckIDPActivity" />
+    </application>
+
+</manifest>
