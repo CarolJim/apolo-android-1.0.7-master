@@ -172,7 +172,7 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
     public void onresetPass(String usuario, int ResetContrasenia, int ID_Promotor) {
         if (view != null) {
             view.hideProgress();
-            view.setresetPass();
+            view.setresetPass(usuario,ResetContrasenia,ID_Promotor);
         }
     }
 

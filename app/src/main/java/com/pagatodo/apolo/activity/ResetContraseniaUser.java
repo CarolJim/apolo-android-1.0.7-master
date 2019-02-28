@@ -30,7 +30,7 @@ public class ResetContraseniaUser extends BasePresenterPermissionActivity<LoginP
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
 
@@ -108,6 +108,7 @@ public class ResetContraseniaUser extends BasePresenterPermissionActivity<LoginP
 
     @Override
     public void setresetPass(String usuario, int ResetContrasenia, int ID_Promotor) {
+
 
     }
 

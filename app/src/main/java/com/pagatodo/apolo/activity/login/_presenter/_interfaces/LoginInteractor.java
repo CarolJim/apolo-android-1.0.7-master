@@ -14,9 +14,10 @@ public interface LoginInteractor {
         void failure(String message);
         void onUserNumberError();
         void onServerError();
-        void onresetPass( String usuario, int ResetContrasenia, int ID_Promotor);
         void onPasswordError();
         void onUserPassError();
+
+        void onresetPass(String usuario, int ResetContrasenia, int ID_Promotor);
     }
     void onLogin(String username, onLoginListener listener);
     void onLoginNewI(String username,String pass,String imei, onLoginListener listener);

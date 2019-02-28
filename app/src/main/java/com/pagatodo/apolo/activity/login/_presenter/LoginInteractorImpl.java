@@ -103,7 +103,8 @@ public class LoginInteractorImpl implements LoginInteractor ,IRequestResult {
 
 
 
-            listener.onresetPass();
+            //listener.onresetPass();
+
             }else {
                 /***
                  * Go to main menu with session
