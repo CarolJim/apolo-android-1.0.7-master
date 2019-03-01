@@ -323,7 +323,7 @@ public class MaterialValidationEditText extends LinearLayout implements View.OnC
                             break;
 
                         case "8": // idptext
-                            result = !txt.isEmpty() && (txt.length() > 8 && txt.length() <= 12);
+                            result = !txt.isEmpty() && (txt.length() > 5 && txt.length() <= 12);
                             message = result ? getString(R.string.valid_field) : getString(R.string.error_min_idp);
                             if (edtCompare != null && result && edtCompare.isValidField()) {
                                 result = edtCompare.getText().equals(txt);

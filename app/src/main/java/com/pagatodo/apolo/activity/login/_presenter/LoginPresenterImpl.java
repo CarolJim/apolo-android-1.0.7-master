@@ -67,7 +67,18 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
     }
 
     @Override
-    public void changePass(int idPromo, String pass, String imei, int resetcontr, String user) {
+    public void changePass(final int idPromo, final String pass, final String imei, final int resetcontr, final String user) {
+
+        view.showProgress(getString(R.string.progress_login));
+        this.ime = imei;
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                view.showProgress(getString(R.string.progress_login));
+                loginInteractor.onChangePass(idPromo,pass,ime,resetcontr,user, LoginPresenterImpl.this);
+            }
+        }, TIME_TO_LOGIN);
 
     }
 
@@ -168,13 +179,6 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
 
     }
 
-    @Override
-    public void onresetPass(String usuario, int ResetContrasenia, int ID_Promotor) {
-        if (view != null) {
-            view.hideProgress();
-            view.setresetPass(usuario,ResetContrasenia,ID_Promotor);
-        }
-    }
 
 
     @Override
@@ -192,6 +196,15 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
             view.setUserNumberError();
         }
     }
+
+    @Override
+    public void onresetPass(int ID_Promotor, String usuario) {
+        if (view != null) {
+            view.hideProgress();
+            view.setresetPass(ID_Promotor,usuario);
+        }
+    }
+
 
     @Override
     public void onCreate() {

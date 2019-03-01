@@ -10,8 +10,10 @@ import com.pagatodo.apolo.activity.ResetContraseniaUser;
 import com.pagatodo.apolo.activity.login._presenter._interfaces.LoginInteractor;
 import com.pagatodo.apolo.data.local.Preferences;
 import com.pagatodo.apolo.data.model.webservice.request.IniciativasRequest;
+import com.pagatodo.apolo.data.model.webservice.request.ResetContraseniaRequest;
 import com.pagatodo.apolo.data.model.webservice.request.ValidaUserRequest;
 import com.pagatodo.apolo.data.model.webservice.response.GetPromotersResponse;
+import com.pagatodo.apolo.data.model.webservice.response.ResetContraseniaResponse;
 import com.pagatodo.apolo.data.model.webservice.response.ValidateUserResponse;
 import com.pagatodo.apolo.data.remote.BuildRequest;
 import com.pagatodo.apolo.data.room.DatabaseManager;
@@ -74,11 +76,19 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
     @Override
     public void onLoginNewI(String username, String pass, String imei, onLoginListener listener) {
         if (isOnline(this.context)) {
-            BuildRequest.validateUserRequest(this, new ValidaUserRequest(username,pass,imei));
-            this.listener=listener;
+                BuildRequest.validateUserRequest(this, new ValidaUserRequest(username, pass, imei));
+                this.listener = listener;
         }
 
 
+    }
+
+    @Override
+    public void onChangePass(int idPromo, String pass, String imei, int resetcontr, String user, onLoginListener listener) {
+        if (isOnline(this.context)) {
+            BuildRequest.RessetContraseniaRequest(this, new ResetContraseniaRequest(idPromo, pass, imei,resetcontr,user));
+            this.listener = listener;
+        }
     }
 
     @Override
@@ -89,6 +99,10 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
                 case POST_VALIDAUSER:
                     prosesgetValidateUserResponse( (ValidateUserResponse) dataManager.getData());
                 break;
+                case POST_RESETEAPASS:
+                    prosesResetPassUserResponse( (ResetContraseniaResponse) dataManager.getData());
+                break;
+
             }
         }
 
@@ -100,7 +114,8 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
 
                     break;
                 //case POST_RESETEAPASS:
-                  //  prosesgetValidateUserResponse((ValidateUserResponse) dataManager.getData());
+
+                  //  prosesgetValidateUserResponse((ResetContraseniaResponse) dataManager.getData());
                    // break;
             }
         }*/
@@ -118,19 +133,43 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
 
             if (element.getPromotor().isResetContraseña()) {
 
-
-
-            //listener.onresetPass();
+            listener.onresetPass(element.getPromotor().getID_Promotor(),element.getPromotor().getPromotor());
 
             }else {
                 /***
                  * Go to main menu with session
                   */
-
-                listener.onSuccess(element.getPromotor());
+                 listener.onSuccess(element.getPromotor());
             }
 
         }
+
+
+    }
+
+    private void prosesResetPassUserResponse(ResetContraseniaResponse data) {
+      //  ResetContraseniaResponse elementa = (ResetContraseniaResponse)data;
+
+
+        int codigo = data.getCodigo();
+
+        if (codigo==0){
+            listener.failure(data.getMensaje());
+
+
+        }else {
+            listener.failure(data.getMensaje());
+        }
+
+
+
+        /*if (elementa.getCodigo()!=0  ){
+
+            if (listener!=null)
+                listener.failure(elementa.getMensaje());
+        }else {
+
+        }*/
 
 
     }
@@ -139,6 +178,8 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
     public void onFailed(DataManager dataManager) {
         if (listener!=null)
         listener.onServerError();
+
+
 
     }
 }

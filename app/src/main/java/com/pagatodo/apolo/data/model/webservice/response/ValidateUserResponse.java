@@ -4,6 +4,10 @@ import com.pagatodo.apolo.data.model.factory.ModelPattern;
 import com.pagatodo.apolo.data.model.factory.Respuesta;
 import com.pagatodo.apolo.data.room.entities.Promotor;
 
+/**
+ * Created by cjimenez on 25/02/2019
+ */
+
 public class ValidateUserResponse extends ModelPattern {
 
     private Respuesta Respuesta;

@@ -62,7 +62,8 @@ public class LoginActivity extends BasePresenterPermissionActivity<LoginPresente
     private int idTienda = 0;
     private MaterialTextView tvVersion;
 
-    private  String IDPROMOTOR,USER;
+    public  static String IDPROMOTOR="IDPROMOTOR";
+    public  static String  USER="USER";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -126,14 +127,15 @@ public class LoginActivity extends BasePresenterPermissionActivity<LoginPresente
     }
 
     @Override
-    public void setresetPass(String usuario, int ResetContrasenia, int ID_Promotor) {
+    public void setresetPass(int ID_Promotor, String usuario) {
         Intent intent = new Intent(LoginActivity.this, ResetContraseniaUser.class);
         intent.putExtra(IDPROMOTOR,ID_Promotor+"");
         intent.putExtra(USER,usuario+"");
-
         startActivity(intent);
-
     }
+
+
+
 
     @Override
     public void setPassError() {
@@ -198,6 +200,11 @@ public class LoginActivity extends BasePresenterPermissionActivity<LoginPresente
         }
         if (ID_Promotor.length() < MIN_SIZE_ID_AFILIADOR) {
             showMessage(getString(R.string.error_min_id_afiliador));
+            return;
+        }
+
+        if (edtNumber == edtPass){
+            showMessage(getString(R.string.error_change_pass_afiliador));
             return;
         }
         /*

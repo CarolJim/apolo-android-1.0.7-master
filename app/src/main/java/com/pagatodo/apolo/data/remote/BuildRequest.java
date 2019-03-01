@@ -5,6 +5,7 @@ import android.util.Log;
 import com.pagatodo.apolo.App;
 import com.pagatodo.apolo.R;
 import com.pagatodo.apolo.activity.CheckIDP._presenter.IdpInteractorImpl;
+import com.pagatodo.apolo.activity.ResetContraseniaUser;
 import com.pagatodo.apolo.data.model.factory.Respuesta;
 import com.pagatodo.apolo.data.model.webservice.remoteconfig.ResponseRemoteConfig;
 import com.pagatodo.apolo.data.model.factory.ModelPattern;
@@ -12,6 +13,7 @@ import com.pagatodo.apolo.data.model.webservice.request.CheckIdpRequest;
 import com.pagatodo.apolo.data.model.webservice.request.CreditRequestRegisterRequest;
 import com.pagatodo.apolo.data.model.webservice.request.DocumentUploadRequest;
 import com.pagatodo.apolo.data.model.webservice.request.IniciativasRequest;
+import com.pagatodo.apolo.data.model.webservice.request.ResetContraseniaRequest;
 import com.pagatodo.apolo.data.model.webservice.request.SMSCodeValidationRequest;
 import com.pagatodo.apolo.data.model.webservice.request.SMSValidationRequest;
 import com.pagatodo.apolo.data.model.webservice.request.TiendasRequest;
@@ -22,6 +24,7 @@ import com.pagatodo.apolo.data.model.webservice.response.GeneralServiceResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GetIniciativasResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GetPromotersResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GetTiendasResponse;
+import com.pagatodo.apolo.data.model.webservice.response.ResetContraseniaResponse;
 import com.pagatodo.apolo.data.model.webservice.response.ValidateUserResponse;
 import com.pagatodo.apolo.data.remote.notifications.model.webservice.mega.GetPushStatus;
 import com.pagatodo.apolo.data.remote.notifications.model.webservice.mega.MegaBaseModel;
@@ -192,7 +195,7 @@ public class BuildRequest {
                 ValidateUserResponse.class);
     }
 
-    /*public static void changePass(IRequestResult result, ValidaUserRequest body) {
+    public static void RessetContraseniaRequest(IRequestResult result, ResetContraseniaRequest body) {
         new RequestBuilder().requestPinning(App.getInstance(),
                 R.raw.pagatodo,
                 LOG_DEBUG,
@@ -203,8 +206,8 @@ public class BuildRequest {
                 body,
                 result,
                 TIMEOUT,
-                GetIniciativasResponse.class); //Esto lo hice yoo
-    }*/
+                ResetContraseniaResponse.class); //Esto lo hice yoo
+    }
 
     public static void getTiendasRequest(IRequestResult result, TiendasRequest body) {
         new RequestBuilder().requestPinning(App.getInstance(),

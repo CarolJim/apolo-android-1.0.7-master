@@ -151,6 +151,7 @@
     <string name="error_min_id_afiliador">Tú Usuario es muy Corto.</string>
     <!-- yoooooo -->
     <string name="error_min_pass_afiliador">Tú Contraseña es muy Corta.</string>
+    <string name="error_change_pass_afiliador">Crea una nueva contraseña.</string>
 
     <string name="error_inactive_promotor">Tú Usuario no se Encuentra Activo.</string>
     <string name="error_iniciativas_empty">No Cuentas con Iniciativas.</string>

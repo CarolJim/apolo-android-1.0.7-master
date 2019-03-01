@@ -41,13 +41,13 @@
             </LinearLayout>
             <!-- Nueva contraseña -->
             <com.pagatodo.apolo.utils.customviews.MaterialValidationEditText
-                android:id="@+id/edtPassNew"
+                android:id="@+id/edtpasstochange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_border_login"
                 android:gravity="center"
                 android:padding="@dimen/dimen_padding_medium"
-                app:formato="pwtext"
+                app:formato="idptext"
                 app:hintColor="@color/colorText"
                 app:hintText="Nueva contraseña." />
             <!-- Confirmar contraseña -->
@@ -58,9 +58,11 @@
                 android:background="@drawable/input_border_login"
                 android:gravity="center"
                 android:padding="4dp"
-                app:formato="pwtext"
+                app:formato="idptext"
                 app:hintColor="@color/colorText"
                 app:hintText="Confirma tu contraseña."/>
+
+
         </LinearLayout>
 
 

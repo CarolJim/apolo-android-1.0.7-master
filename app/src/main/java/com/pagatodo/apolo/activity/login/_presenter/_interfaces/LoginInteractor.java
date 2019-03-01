@@ -5,6 +5,7 @@ import com.pagatodo.apolo.data.room.entities.Promotor;
 
 /**
  * Created by rvargas on 21-07-17.
+ *Modified by cjimenez on 25/02/2019.
  */
 
 public interface LoginInteractor {
@@ -17,8 +18,9 @@ public interface LoginInteractor {
         void onPasswordError();
         void onUserPassError();
 
-        void onresetPass(String usuario, int ResetContrasenia, int ID_Promotor);
+        void onresetPass(int ID_Promotor, String usuario);
     }
     void onLogin(String username, onLoginListener listener);
     void onLoginNewI(String username,String pass,String imei, onLoginListener listener);
+    void onChangePass(int idPromo, String pass, String imei, int resetcontr, String user, onLoginListener listener);
 }

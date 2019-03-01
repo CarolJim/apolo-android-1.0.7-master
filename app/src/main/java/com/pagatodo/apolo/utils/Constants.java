@@ -47,7 +47,7 @@ public final class Constants {
     //Login
     public static final int MIN_SIZE_ID_AFILIADOR = 6;
     //yoo :D
-    public static final int MIN_SIZE_PASS_AFILIADOR = 8;
+    public static final int MIN_SIZE_PASS_AFILIADOR = 6;
 
     //CAMERA
     public static final int REQUEST_CAMERA_PERMISSION = 200;

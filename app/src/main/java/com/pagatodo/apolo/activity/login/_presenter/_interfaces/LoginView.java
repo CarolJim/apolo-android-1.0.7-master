@@ -9,7 +9,7 @@ import com.pagatodo.apolo.ui.base.factoryinterfaces.IEventOnView;
 public interface LoginView extends IEventOnView{
     void setUserNumberError();
     void setServerError();
-    void setresetPass(String usuario, int ResetContrasenia, int ID_Promotor);
+    void setresetPass( int ID_Promotor,String usuario);
     void setPassError();
     void setUserPassError();
     void setNavigation();
