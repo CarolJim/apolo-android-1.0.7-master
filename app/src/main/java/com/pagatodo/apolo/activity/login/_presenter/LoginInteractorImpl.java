@@ -24,18 +24,21 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import static com.pagatodo.apolo.data.remote.RequestContract.GET_PROMOTERS;
+import static com.pagatodo.apolo.data.remote.RequestContract.POST_RESETEAPASS;
 import static com.pagatodo.apolo.data.remote.RequestContract.POST_VALIDAUSER;
 import static com.pagatodo.networkframework.UtilsNet.isOnline;
+import static com.pagatodo.networkframework.model.ResponseConstants.RESPONSE_CODE_OK;
 
 
 /**
  * Created by rvargas on 21-07-17.
  */
 
-public class LoginInteractorImpl implements LoginInteractor ,IRequestResult {
+public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { //le voy a quitar el IRequestResult
     Preferences prefs = App.getInstance().getPrefs();
     Context context = App.getInstance();
     onLoginListener listener;
+
     private Promotor validateUser(String passPromotor) {
         List<Promotor> promotores = new ArrayList<>();
         try {
@@ -53,7 +56,7 @@ public class LoginInteractorImpl implements LoginInteractor ,IRequestResult {
 
     @Override
     public void onLogin(String username, onLoginListener listener) {
-     //   Promotor promotor = validateUser(username);
+        //Promotor promotor = validateUser(username);
         if (username.isEmpty() ) {
             listener.onUserNumberError();
             //listener.onUserPassError();
@@ -80,23 +83,37 @@ public class LoginInteractorImpl implements LoginInteractor ,IRequestResult {
 
     @Override
     public void onSuccess(DataManager dataManager) {
+
         if (dataManager.getData() != null) {
             switch (dataManager.getMethod()) {
                 case POST_VALIDAUSER:
                     prosesgetValidateUserResponse( (ValidateUserResponse) dataManager.getData());
-                    break;
+                break;
             }
         }
+
+
+        /*
+        if (dataManager.getData() != null) {
+            switch (dataManager.getMethod()) {
+                case POST_VALIDAUSER:
+
+                    break;
+                //case POST_RESETEAPASS:
+                  //  prosesgetValidateUserResponse((ValidateUserResponse) dataManager.getData());
+                   // break;
+            }
+        }*/
 
     }
 
     private void prosesgetValidateUserResponse(ValidateUserResponse data) {
         ValidateUserResponse element = (ValidateUserResponse)data;
 
-        if (element.getRespuesta().getCodigo()!=0){
+        if (element.getCodigo()!=0  ){
 
             if (listener!=null)
-                listener.onPasswordError();
+                listener.failure(element.getMensaje());
         }else {
 
             if (element.getPromotor().isResetContraseña()) {

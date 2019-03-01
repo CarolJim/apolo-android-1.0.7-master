@@ -22,6 +22,7 @@ import com.pagatodo.apolo.data.model.webservice.response.GeneralServiceResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GetIniciativasResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GetPromotersResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GetTiendasResponse;
+import com.pagatodo.apolo.data.model.webservice.response.ValidateUserResponse;
 import com.pagatodo.apolo.data.remote.notifications.model.webservice.mega.GetPushStatus;
 import com.pagatodo.apolo.data.remote.notifications.model.webservice.mega.MegaBaseModel;
 import com.pagatodo.apolo.data.remote.notifications.model.webservice.requestinbox.RequestGetInbox;
@@ -50,6 +51,7 @@ import static com.pagatodo.apolo.data.remote.RequestContract.MEGA_GET_PUSH_STATU
 import static com.pagatodo.apolo.data.remote.RequestContract.MEGA_OBTENER_MSJ_INBOX;
 import static com.pagatodo.apolo.data.remote.RequestContract.MEGA_REGISTER_DEVICE;
 import static com.pagatodo.apolo.data.remote.RequestContract.MEGA_REGISTER_USER;
+import static com.pagatodo.apolo.data.remote.RequestContract.POST_RESETEAPASS;
 import static com.pagatodo.apolo.data.remote.RequestContract.POST_VALIDAUSER;
 import static com.pagatodo.apolo.data.remote.RequestContract.SEND_SMS_CONFIRMATION;
 import static com.pagatodo.apolo.data.remote.RequestContract.SMS_CODE_VALIDATION;
@@ -187,8 +189,22 @@ public class BuildRequest {
                 body,
                 result,
                 TIMEOUT,
-                GetIniciativasResponse.class);
+                ValidateUserResponse.class);
     }
+
+    /*public static void changePass(IRequestResult result, ValidaUserRequest body) {
+        new RequestBuilder().requestPinning(App.getInstance(),
+                R.raw.pagatodo,
+                LOG_DEBUG,
+                POST_RESETEAPASS,
+                POST,
+                null,
+                RemoteConfig.getUrlServer() + POST_RESETEAPASS,
+                body,
+                result,
+                TIMEOUT,
+                GetIniciativasResponse.class); //Esto lo hice yoo
+    }*/
 
     public static void getTiendasRequest(IRequestResult result, TiendasRequest body) {
         new RequestBuilder().requestPinning(App.getInstance(),

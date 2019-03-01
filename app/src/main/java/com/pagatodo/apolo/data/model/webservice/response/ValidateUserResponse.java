@@ -6,15 +6,31 @@ import com.pagatodo.apolo.data.room.entities.Promotor;
 
 public class ValidateUserResponse extends ModelPattern {
 
-    private Respuesta respuesta ;
-    private Promotor promotor;
+    private Respuesta Respuesta;
+    private Promotor Promotor;
+
+    private int Codigo;
+    private boolean Exito;
+    private String Mensaje;
+
+    public int getCodigo() {
+        return Codigo;
+    }
+
+    public boolean isExito() {
+        return Exito;
+    }
+
+    public String getMensaje() {
+        return Mensaje;
+    }
 
 
     public Respuesta getRespuesta() {
-        return respuesta;
+        return Respuesta;
     }
 
     public Promotor getPromotor() {
-        return promotor;
+        return Promotor;
     }
 }

@@ -181,7 +181,7 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
     public void onPasswordError() {
         if (view != null) {
             view.hideProgress();
-            view.setServerError();
+            view.setUserNumberError();
         }
     }
 
@@ -189,7 +189,7 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
     public void onUserPassError(){
         if (view != null){
             view.hideProgress();
-            view.setUserPassError();
+            view.setUserNumberError();
         }
     }
 
