@@ -132,6 +132,8 @@ public class Preferences {
         if (promotor != null) {
             params.put("Content-type", "application/json");
             params.put("Promotor", String.valueOf(promotor.getID_Promotor()));
+            //params.put("Promotor", String.valueOf(promotor.getcontrasenia())); revisar bien si aqui es donde tengo que mandar el imei y la contraseña
+            //params.put("Promotor", String.valueOf(promotor.getimei()));
             return params;
         }
         return params;

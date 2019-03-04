@@ -22,5 +22,5 @@ public interface LoginInteractor {
     }
     void onLogin(String username, onLoginListener listener);
     void onLoginNewI(String username,String pass,String imei, onLoginListener listener);
-    void onChangePass(int idPromo, String pass, String imei, int resetcontr, String user, onLoginListener listener);
+    void onChangePass(int idPromo, String pass, String imei, boolean resetcontr, String user, onLoginListener listener);
 }

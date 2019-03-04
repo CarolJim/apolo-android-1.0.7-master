@@ -34,6 +34,7 @@ import static com.pagatodo.networkframework.model.ResponseConstants.RESPONSE_COD
 
 /**
  * Created by rvargas on 21-07-17.
+ * Modified by cjimenez on 25/02/2019
  */
 
 public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { //le voy a quitar el IRequestResult
@@ -84,12 +85,14 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
     }
 
     @Override
-    public void onChangePass(int idPromo, String pass, String imei, int resetcontr, String user, onLoginListener listener) {
+    public void onChangePass(int idPromo, String pass, String imei, boolean resetcontr, String user, onLoginListener listener) {
         if (isOnline(this.context)) {
             BuildRequest.RessetContraseniaRequest(this, new ResetContraseniaRequest(idPromo, pass, imei,resetcontr,user));
             this.listener = listener;
         }
     }
+
+
 
     @Override
     public void onSuccess(DataManager dataManager) {
@@ -131,7 +134,7 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
                 listener.failure(element.getMensaje());
         }else {
 
-            if (element.getPromotor().isResetContraseña()) {
+            if (element.getPromotor().isResetContraseña()) { //aqui es si reset contraseña en 0, se cambia para evaluar el otro servicio
 
             listener.onresetPass(element.getPromotor().getID_Promotor(),element.getPromotor().getPromotor());
 

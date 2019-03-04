@@ -11,14 +11,14 @@ public class ResetContraseniaRequest extends ModelPattern {
     private int ID_Promotor;
     private String Contrasenia;
     private String IMEI;
-    private int ResetContrasenia;
+    private boolean ResetContrasenia;
     private String Usuario;
 
     public ResetContraseniaRequest(){
 
     }
 
-    public ResetContraseniaRequest(int idpromotor, String contrasenia, String IMEI, int resetContrasenia, String usuario){
+    public ResetContraseniaRequest(int idpromotor, String contrasenia, String IMEI, boolean resetContrasenia, String usuario){
         ID_Promotor = idpromotor;
         Contrasenia = contrasenia;
         this.IMEI = IMEI;

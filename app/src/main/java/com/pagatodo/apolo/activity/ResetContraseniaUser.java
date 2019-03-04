@@ -112,7 +112,7 @@ public class ResetContraseniaUser extends BasePresenterPermissionActivity<LoginP
             }
             String imei = telephonyManager.getDeviceId();
 
-        presenter.changePass(Integer.parseInt(iduser),confirmNewPass,imei,0,promotor);
+        presenter.changePass(Integer.parseInt(iduser),confirmNewPass,imei,false,promotor);
         finish();
 
 

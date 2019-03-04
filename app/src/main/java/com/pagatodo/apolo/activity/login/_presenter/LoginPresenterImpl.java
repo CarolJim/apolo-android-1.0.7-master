@@ -23,6 +23,7 @@ import static com.pagatodo.apolo.data.local.Preferences.createSession;
 
 /**
  * Created by rvargas on 21-07-17.
+ * Modified by cjimenez on 25/02/2019.
  */
 
 public class LoginPresenterImpl extends BasePresenter<LoginView> implements LoginPresenter, LoginInteractor.onLoginListener {
@@ -67,7 +68,7 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
     }
 
     @Override
-    public void changePass(final int idPromo, final String pass, final String imei, final int resetcontr, final String user) {
+    public void changePass(final int idPromo, final String pass, final String imei, final boolean resetcontr, final String user) {
 
         view.showProgress(getString(R.string.progress_login));
         this.ime = imei;
