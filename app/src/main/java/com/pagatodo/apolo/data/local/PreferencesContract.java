@@ -11,6 +11,7 @@ public class PreferencesContract {
     public static final String CURRENT_PROMOTOR         = "userData";
     public static final String INICIATIVA               = "iniciativa";
     public static final String TIENDA                   = "tienda";
+    public static final String HEADER_NEW               = "header";
     public static final String IDP                      = "idp";
     public static final String AFILIADO_DATA            = "afiliadoData";
     public static final String IS_SMS_ENABLE            = "isSMSEnable";

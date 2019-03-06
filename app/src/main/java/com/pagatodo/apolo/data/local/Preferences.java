@@ -7,7 +7,10 @@ import android.preference.PreferenceManager;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pagatodo.apolo.data.model.Mensaje;
+import com.pagatodo.apolo.data.model.webservice.request.ValidaUserRequest;
+import com.pagatodo.apolo.data.model.webservice.response.ValidateUserResponse;
 import com.pagatodo.apolo.data.room.DatabaseManager;
+import com.pagatodo.apolo.data.room.entities.Headers;
 import com.pagatodo.apolo.data.room.entities.Promotor;
 
 import java.io.ByteArrayInputStream;
@@ -23,6 +26,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import static com.pagatodo.apolo.data.local.PreferencesContract.CURRENT_PROMOTOR;
+import static com.pagatodo.apolo.data.local.PreferencesContract.HEADER_NEW;
 import static com.pagatodo.apolo.data.local.PreferencesContract.INICIATIVA;
 import static com.pagatodo.apolo.data.local.PreferencesContract.IS_SMS_ENABLE;
 import static com.pagatodo.apolo.data.local.PreferencesContract.LIST_NOTIFICATIONS;
@@ -37,6 +41,8 @@ import static com.pagatodo.apolo.data.local.PreferencesContract.TIENDA;
 public class Preferences {
 
     private SharedPreferences preferences;
+    String Password ;
+    String IMEI ;
 
 
     public Preferences(Context context) {
@@ -106,10 +112,15 @@ public class Preferences {
         editor.commit();
     }
 
-    public static void createSession(Preferences pref, Promotor promotor, int idIniciativa, int idTienda) {
+    public static void createSession(Preferences pref, Promotor promotor, int idIniciativa, int idTienda, String password, String IMEI) {
         /*Implementamos el manejo de Sesión*/
         pref.saveDataBool(SESSION_ACTIVE, true);
         pref.saveData(CURRENT_PROMOTOR, promotor);
+        // lo hice yooooooooooo
+        pref.saveData(HEADER_NEW, password);
+        pref.saveData(HEADER_NEW, IMEI);
+
+
         pref.saveDataInt(INICIATIVA, idIniciativa);
         pref.saveDataInt(TIENDA, idTienda);
     }
@@ -118,6 +129,10 @@ public class Preferences {
         List<String> preferenciasList = new ArrayList<>();
         preferenciasList.add(SESSION_ACTIVE);
         preferenciasList.add(CURRENT_PROMOTOR);
+
+        //lo hice yoooo
+        preferenciasList.add(HEADER_NEW);
+
         preferenciasList.add(INICIATIVA);
         preferenciasList.add(TIENDA);
         for (String preferencia : preferenciasList) {
@@ -129,11 +144,13 @@ public class Preferences {
     public HashMap<String, String> getHeaders() {
         HashMap<String, String> params = new HashMap<>();
         Promotor promotor = (Promotor) loadData(CURRENT_PROMOTOR, true);
+        Headers headers = (Headers) loadData(HEADER_NEW, true);
         if (promotor != null) {
             params.put("Content-type", "application/json");
             params.put("Promotor", String.valueOf(promotor.getID_Promotor()));
-            //params.put("Promotor", String.valueOf(promotor.getcontrasenia())); revisar bien si aqui es donde tengo que mandar el imei y la contraseña
-            //params.put("Promotor", String.valueOf(promotor.getimei()));
+            params.put("Headers", String.valueOf(headers.getIMEI()));
+            //revisar bien si aqui es donde tengo que mandar el imei y la contraseña
+           //params.put("Promotor", String.valueOf(promotor.getIMEI()));
             return params;
         }
         return params;

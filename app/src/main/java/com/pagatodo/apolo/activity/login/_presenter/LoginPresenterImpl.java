@@ -150,7 +150,7 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
     @Override
     public void onSuccess(Promotor promotor) {
         if (view != null) {
-            createSession(pref, promotor, idIniciativa, idTienda);
+            createSession(pref, promotor, idIniciativa, idTienda, pass, ime);
             view.setNavigation();
 //            view.hideProgress();
         }
