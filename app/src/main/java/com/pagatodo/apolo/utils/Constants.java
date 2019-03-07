@@ -70,6 +70,10 @@ public final class Constants {
     public static final Boolean CODIGO_VERIFICADO   = false;
     public static final Boolean ENABLE_VERIFY       = true;
 
+    //DataHeaders
+    public static final String IMEI = "IMEI";
+    public static final String DTOCIF = "DTOCIF";
+
     //App Version
     public static final String APP_VERSION = "1";
 

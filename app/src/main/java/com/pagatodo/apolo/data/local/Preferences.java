@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.pagatodo.apolo.App;
 import com.pagatodo.apolo.data.model.Mensaje;
 import com.pagatodo.apolo.data.model.webservice.request.ValidaUserRequest;
 import com.pagatodo.apolo.data.model.webservice.response.ValidateUserResponse;
@@ -33,16 +34,19 @@ import static com.pagatodo.apolo.data.local.PreferencesContract.LIST_NOTIFICATIO
 import static com.pagatodo.apolo.data.local.PreferencesContract.SESSION_ACTIVE;
 import static com.pagatodo.apolo.data.local.PreferencesContract.SFECHA_ACTUALIZACION;
 import static com.pagatodo.apolo.data.local.PreferencesContract.TIENDA;
+import static com.pagatodo.apolo.utils.Constants.DTOCIF;
+import static com.pagatodo.apolo.utils.Constants.IMEI;
+import static java.lang.System.load;
 
 /**
  * Created by jvazquez on 19/05/2017.
+ * Modified by cjimenez on 25/02/2019.
  */
 
 public class Preferences {
 
     private SharedPreferences preferences;
-    String Password ;
-    String IMEI ;
+   private String pass, imei;
 
 
     public Preferences(Context context) {
@@ -112,17 +116,16 @@ public class Preferences {
         editor.commit();
     }
 
-    public static void createSession(Preferences pref, Promotor promotor, int idIniciativa, int idTienda, String password, String IMEI) {
+    //aqui modifiqueeeeeeee
+    public static void createSession(Preferences pref, Promotor promotor, int idIniciativa, int idTienda, String pass, String imei) {
         /*Implementamos el manejo de Sesión*/
         pref.saveDataBool(SESSION_ACTIVE, true);
         pref.saveData(CURRENT_PROMOTOR, promotor);
-        // lo hice yooooooooooo
-        pref.saveData(HEADER_NEW, password);
-        pref.saveData(HEADER_NEW, IMEI);
-
-
         pref.saveDataInt(INICIATIVA, idIniciativa);
         pref.saveDataInt(TIENDA, idTienda);
+        // lo hice yooooooooooo
+        pref.saveData(HEADER_NEW, pass);
+        pref.saveData(HEADER_NEW, imei);
     }
 
     public void destroySession() {
@@ -148,9 +151,9 @@ public class Preferences {
         if (promotor != null) {
             params.put("Content-type", "application/json");
             params.put("Promotor", String.valueOf(promotor.getID_Promotor()));
-            params.put("Headers", String.valueOf(headers.getIMEI()));
             //revisar bien si aqui es donde tengo que mandar el imei y la contraseña
-           //params.put("Promotor", String.valueOf(promotor.getIMEI()));
+            params.put("IMEI", App.getInstance().getPrefs().loadString(IMEI));
+            params.put("PASS", App.getInstance().getPrefs().loadString(DTOCIF));
             return params;
         }
         return params;

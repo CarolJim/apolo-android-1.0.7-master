@@ -33,7 +33,7 @@ public class Promotor extends ModelPattern {
     private String Promotor = "";
 
     @ColumnInfo(name = "reset_contraseña")
-    private boolean ResetContraseña ;
+    private boolean ResetContrasena ;
 
     @ColumnInfo(name = "usuario_valido")
     private boolean UsuarioValido ;
@@ -48,14 +48,14 @@ public class Promotor extends ModelPattern {
 
 
 
-    public Promotor(boolean activo, String apellidoMaterno, String apellidoPaterno, int ID_Promotor, String nombre, String promotor, boolean resetContraseña, boolean usuarioValido) {
+    public Promotor(boolean activo, String apellidoMaterno, String apellidoPaterno, int ID_Promotor, String nombre, String promotor, boolean resetContrasena, boolean usuarioValido) {
         Activo = activo;
         ApellidoMaterno = apellidoMaterno;
         ApellidoPaterno = apellidoPaterno;
         this.ID_Promotor = ID_Promotor;
         Nombre = nombre;
         Promotor = promotor;
-        ResetContraseña = resetContraseña;
+        ResetContrasena = resetContrasena;
         UsuarioValido = usuarioValido;
        // Password = password;
         //this.IMEI = IMEI;
@@ -109,12 +109,12 @@ public class Promotor extends ModelPattern {
         Activo = activo;
     }
 
-    public boolean isResetContraseña(){
-        return ResetContraseña;
+    public boolean isResetContrasena() {
+        return ResetContrasena;
     }
 
-    public void setResetContraseña(boolean resetContraseña){
-        ResetContraseña = resetContraseña;
+    public void setResetContrasena(boolean resetContrasena) {
+        ResetContrasena = resetContrasena;
     }
 
     public boolean isUsuarioValido(){

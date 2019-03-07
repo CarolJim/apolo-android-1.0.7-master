@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.widget.ArrayAdapter;
 
+import com.pagatodo.apolo.App;
 import com.pagatodo.apolo.R;
 import com.pagatodo.apolo.activity.login._presenter._interfaces.LoginInteractor;
 import com.pagatodo.apolo.activity.login._presenter._interfaces.LoginPresenter;
@@ -20,6 +21,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import static com.pagatodo.apolo.data.local.Preferences.createSession;
+import static com.pagatodo.apolo.utils.Constants.DTOCIF;
+import static com.pagatodo.apolo.utils.Constants.IMEI;
 
 /**
  * Created by rvargas on 21-07-17.
@@ -78,6 +81,11 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
             public void run() {
                 view.showProgress(getString(R.string.progress_login));
                 loginInteractor.onChangePass(idPromo,pass,ime,resetcontr,user, LoginPresenterImpl.this);
+
+                App.getInstance().getPrefs().saveData(DTOCIF,pass);
+                App.getInstance().getPrefs().saveData(IMEI,imei);
+
+
             }
         }, TIME_TO_LOGIN);
 
@@ -155,6 +163,7 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
 //            view.hideProgress();
         }
     }
+
 
     @Override
     public void failure(String message) {

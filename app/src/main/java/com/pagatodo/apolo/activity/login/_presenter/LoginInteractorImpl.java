@@ -134,7 +134,7 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
                 listener.failure(element.getMensaje());
         }else {
 
-            if (element.getPromotor().isResetContraseña()) { //aqui es si reset contraseña en 0, se cambia para evaluar el otro servicio
+            if (element.getPromotor().isResetContrasena()) { //aqui es si reset contraseña en 0, se cambia para evaluar el otro servicio
 
             listener.onresetPass(element.getPromotor().getID_Promotor(),element.getPromotor().getPromotor());
 
