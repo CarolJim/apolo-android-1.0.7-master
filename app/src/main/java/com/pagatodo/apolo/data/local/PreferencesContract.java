@@ -2,6 +2,8 @@ package com.pagatodo.apolo.data.local;
 
 /**
  * Created by jvazquez on 26/07/2017.
+ *
+ * Modified by cjimenez on 25/02/2019.
  */
 
 public class PreferencesContract {

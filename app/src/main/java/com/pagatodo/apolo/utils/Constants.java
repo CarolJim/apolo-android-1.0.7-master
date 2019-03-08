@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * Created by rvargas on 14/07/2017.
+ *
+ * Modified by cjimenez on 25/02/2019.
  */
 
 public final class Constants {

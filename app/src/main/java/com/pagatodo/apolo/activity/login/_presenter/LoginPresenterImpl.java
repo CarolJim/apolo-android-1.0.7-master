@@ -81,7 +81,7 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
             public void run() {
                 view.showProgress(getString(R.string.progress_login));
                 loginInteractor.onChangePass(idPromo,pass,ime,resetcontr,user, LoginPresenterImpl.this);
-
+                //lo modifique yooooooo
                 App.getInstance().getPrefs().saveData(DTOCIF,pass);
                 App.getInstance().getPrefs().saveData(IMEI,imei);
 

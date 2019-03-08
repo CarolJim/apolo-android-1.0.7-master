@@ -147,13 +147,13 @@ public class Preferences {
     public HashMap<String, String> getHeaders() {
         HashMap<String, String> params = new HashMap<>();
         Promotor promotor = (Promotor) loadData(CURRENT_PROMOTOR, true);
-        Headers headers = (Headers) loadData(HEADER_NEW, true);
+        //Headers headers = (Headers) loadData(HEADER_NEW, true);
         if (promotor != null) {
             params.put("Content-type", "application/json");
             params.put("Promotor", String.valueOf(promotor.getID_Promotor()));
             //revisar bien si aqui es donde tengo que mandar el imei y la contraseña
             params.put("IMEI", App.getInstance().getPrefs().loadString(IMEI));
-            params.put("PASS", App.getInstance().getPrefs().loadString(DTOCIF));
+            params.put("Password", App.getInstance().getPrefs().loadString(DTOCIF));
             return params;
         }
         return params;
