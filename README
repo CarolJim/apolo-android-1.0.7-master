@@ -1,0 +1,73 @@
+ Version actual de la aplicación Apolo
+ versionCode 6
+ versionName "1.1.0"
+
+
+ MODIFICACIONES
+
+Al cargar la aplicacion ya no se guarda en la memoria del dispositivo, el catalogo de promotores para realizar la validacion del usuario.
+Al iniciar sesion el promotor ingresa un usuario, tienda e iniciativa, ahora inicia sesion con un campo mas que es contraseña invocando al metodo ValidarUsuario. Mandando como parametros de
+entrada lo siguiente:
+
+                        "Promotor": "prom23"
+                        "Password": "msagrero3"
+                        "IMEI"    : "353011070294103"
+
+Teniendo como respuesta lo siguiente:
+
+                        Respuesta:
+                            "Codigo": 0,
+                            "Exito": true,
+                            "Mensaje": "Usuario valido",
+
+                            "Promotor":
+                                "Activo": true,
+                                "ApellidoMaterno": ""
+                                "ApellidoPaterno": "",
+                                "ID_Promotor": 1,
+                                "Nombre": "",
+                                "Promotor": "prom23",
+                                "ResetContrasena": False,
+                                "UsuarioValido": true
+
+Si el campo ResetContrasena es igual a True, se debe pintar en el APP una vista nueva donde el usuario pueda ingresar una nueva contraseña y confirmarla llamando al metodo ResetearContrasenia, mandando
+como parametros de entrada los siguientes datos:
+
+
+                         "ID_Promotor":1,
+                         "Contrasenia":"msagrero3",
+                         "IMEI":"353011070294103",
+                         "ResetContrasenia":False,
+                         "Usuario":"prom23"
+
+
+Teniendo como respuesta lo siguiente:
+
+                            Respuesta:
+
+                              "Codigo": 0,
+                              "Exito": true,
+                              "Mensaje": "Operación ejecutada correctamente.",
+
+                              "ReseteoContrasenia":
+                                    "Mensaje": "Contraseña cambiada correctamente",
+                                    "UsuarioValido": true
+
+
+Son las unicas modificaciones hechas dentro de la aplicación, cambiando tambien la version.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

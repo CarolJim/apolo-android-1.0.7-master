@@ -110,19 +110,6 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
         }
 
 
-        /*
-        if (dataManager.getData() != null) {
-            switch (dataManager.getMethod()) {
-                case POST_VALIDAUSER:
-
-                    break;
-                //case POST_RESETEAPASS:
-
-                  //  prosesgetValidateUserResponse((ResetContraseniaResponse) dataManager.getData());
-                   // break;
-            }
-        }*/
-
     }
 
     private void prosesgetValidateUserResponse(ValidateUserResponse data) {
