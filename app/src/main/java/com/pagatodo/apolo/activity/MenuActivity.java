@@ -12,6 +12,7 @@ import com.pagatodo.apolo.activity.CheckIDP.CheckIDPActivity;
 import com.pagatodo.apolo.activity.login.LoginActivity;
 import com.pagatodo.apolo.activity.register.RegisterActivity;
 import com.pagatodo.apolo.activity.splash.SplashActivity;
+import com.pagatodo.apolo.activity.validate.ValidateIDP;
 import com.pagatodo.apolo.ui.base.factoryactivities.BaseActivity;
 import com.pagatodo.apolo.utils.customviews.MaterialTextView;
 
@@ -69,6 +70,10 @@ public class MenuActivity extends BaseActivity {
         finish();
     }
 
+    @OnClick(R.id.btnDomi)
+    public void domi(){
+        showView(ValidateIDP.class);
+    }
 
     @OnClick(R.id.logout)
     public void endLogout(final View view) {

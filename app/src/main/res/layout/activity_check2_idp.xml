@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutValidateIDP"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutIdp"
-    tools:context="com.pagatodo.apolo.activity.CheckIDP.CheckIDPActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_app">
+    android:background="@color/bg_app"
+    tools:context=".activity.validate.ValidateIDP">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,10 +22,10 @@
             android:layout_weight="2"
             android:gravity="center"
             android:orientation="vertical">
-            <!-- Numero de usuario -->
 
+            <!-- Numero de usuario -->
             <com.pagatodo.apolo.utils.customviews.MaterialValidationEditText
-                android:id="@+id/edtIDPNumber"
+                android:id="@+id/edt2IDPNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_border_login"
@@ -37,7 +38,6 @@
                 app:hintText="@string/hint_verify_idp"
                 app:maxLength="8" >
             </com.pagatodo.apolo.utils.customviews.MaterialValidationEditText>
-
 
             <TextView
                 android:visibility="gone"
@@ -58,14 +58,14 @@
             android:layout_marginLeft="@dimen/dimen_margin_medium"
             android:layout_marginRight="@dimen/dimen_margin_medium"
             android:orientation="vertical">
-            <!-- Boton Login  -->
+
             <com.pagatodo.apolo.utils.customviews.MaterialButton
-                android:id="@+id/btnCheck"
+                android:id="@+id/btnValidateIDP"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_button_height"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="@dimen/dimen_margin_xl"
-                android:text="@string/txt_button_continue"
+                android:text="@string/txt_btn_validate"
                 app:buttonNormalColor="@color/teal"
                 app:buttonStrokeColor="@color/teal"
                 app:cornerRadius="@dimen/dimen_button_radius"
@@ -73,8 +73,8 @@
                 app:intercepterOnclick="true"
                 app:textColor="@color/white" />
 
-
         </LinearLayout>
+
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

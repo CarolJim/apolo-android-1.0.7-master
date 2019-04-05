@@ -20,8 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ResetContraseniaUser"></activity>
-        <!-- Activity Splash Start -->
+        <activity android:name=".activity.account.SelectBankActivity"></activity>
+        <activity android:name=".activity.validate.ValidateIDP" />
+        <activity android:name=".activity.ResetContraseniaUser" /> <!-- Activity Splash Start -->
         <activity
             android:name=".activity.splash.SplashActivity"
             android:noHistory="true"

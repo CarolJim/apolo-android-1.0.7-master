@@ -78,6 +78,19 @@
             android:foreground="?android:attr/selectableItemBackground"
             app:cornerRadius="@dimen/dimen_button_radius"/>
 
+        <!-- Boton Domiciliar -->
+        <com.pagatodo.apolo.utils.customviews.MaterialButton
+            android:id="@+id/btnDomi"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/txt_button_domi"
+            android:textColor="@color/white"
+            app:buttonNormalColor="@color/colorPrimary"
+            app:buttonStrokeColor="@color/colorPrimary"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cornerRadius="@dimen/dimen_button_radius"/>
+
     </LinearLayout>
 
     </LinearLayout>

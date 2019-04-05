@@ -149,7 +149,8 @@
                             app:hintText="@string/editText_telefono"
                             app:maxLength="10"
                             app:maxLines="1"
-                            android:imeActionId="@+id/actionDone"/>
+                            android:imeActionId="@+id/actionDone"
+                            tools:ignore="InvalidImeActionId" />
                     </FrameLayout>
                     <android.support.v4.widget.Space
                         android:layout_weight="1"

@@ -21,10 +21,12 @@
     <string name="txt_button_continue">CONTINUAR</string>
     <string name="txt_button_register">NUEVA SOLICITUD CREDITO</string>
     <string name="txt_button_query">CONSULTAR SOLICITUD CREDITO</string>
+    <string name="txt_button_domi">DOMICILIAR PAGO</string>
     <string name="txt_button_login">INGRESAR</string>
     <string name="txt_button_end">FINALIZAR</string>
     <string name="txt_button_reenviar">REENVIAR</string>
     <string name="txt_btn_reintent">REINTENTAR</string>
+    <string name="txt_btn_validate">VALIDAR IDP</string>
 
     <!-- MaterialValidationEditText -->
     <!-- EditTexts -->
