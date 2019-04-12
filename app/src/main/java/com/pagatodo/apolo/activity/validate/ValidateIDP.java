@@ -1,7 +1,12 @@
 package com.pagatodo.apolo.activity.validate;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.support.design.widget.CoordinatorLayout;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.TextView;
 
@@ -148,7 +153,7 @@ public class ValidateIDP extends BasePresenterPermissionActivity<LoginPresenter>
 
     @Override
     public void onValidationSuccess() {
-        presenter.loginNew(ID_Promotor,"", "");
+        presenter.validateIDP(ID_Promotor);
 
     }
 

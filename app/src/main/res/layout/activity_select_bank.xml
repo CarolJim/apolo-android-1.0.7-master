@@ -1,9 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context=".activity.account.SelectBankActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/logout"
+            android:adjustViewBounds="false"
+            android:scaleType="fitCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end|right"
+            tools:ignore="VectorDrawableCompat"
+            app:srcCompat="@drawable/ic_menu"
+            android:visibility="visible"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/idp"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_idp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/colorAccent"
+            android:layout_weight="4"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nombre"
+
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_nombre_completo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/colorAccent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/banco"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+        <Spinner
+            android:id="@+id/sp_bancos"
+            android:layout_weight=".3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+        </Spinner>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ed_num_tarjeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="8dp"
+        android:background="@drawable/caja_texto"
+        android:textSize="18sp"
+        android:textColor="@color/colorText"
+        android:gravity="center"
+        android:singleLine="true"
+        android:inputType="number"
+        android:maxLength="16"
+        android:hint="@string/numero_de_tarjeta"
+        android:textColorHint="@color/colorText"/>
+
+    <EditText
+        android:id="@+id/ed_confirm_num_tarjeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="8dp"
+        android:background="@drawable/caja_texto"
+        android:textSize="18sp"
+        android:singleLine="true"
+        android:textColor="@color/colorText"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="16"
+        android:hint="@string/confirma_numero_de_tarjeta"
+        android:textColorHint="@color/colorText"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="bottom|center_horizontal">
+
+        <com.pagatodo.apolo.utils.customviews.MaterialButton
+            android:id="@+id/btnContinuar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_button_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dimen_margin_xl"
+            android:text="@string/txt_button_continue"
+            app:buttonNormalColor="@color/teal"
+            app:buttonStrokeColor="@color/teal"
+            app:cornerRadius="@dimen/dimen_button_radius"
+            app:hintColor="@color/white"
+            app:intercepterOnclick="true"
+            app:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

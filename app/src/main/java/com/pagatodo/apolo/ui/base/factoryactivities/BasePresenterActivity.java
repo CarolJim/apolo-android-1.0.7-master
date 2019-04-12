@@ -47,6 +47,8 @@ public abstract class BasePresenterActivity<iProcessData extends IProcessData> e
     @Override
     public void showError(String message) {
         super.showErrorViewActivity();
+
+
     }
 
     @Override

@@ -16,7 +16,11 @@ import com.pagatodo.apolo.activity.login.LoginActivity;
 import com.pagatodo.apolo.activity.splash._presenter.SplashPresenter;
 import com.pagatodo.apolo.activity.splash._presenter._interfaces.ISplashPresenter;
 import com.pagatodo.apolo.activity.splash._presenter._interfaces.ISplashView;
+import com.pagatodo.apolo.data.room.pojo.Bancos;
+import com.pagatodo.apolo.data.room.pojo.Bines;
 import com.pagatodo.apolo.ui.base.factoryactivities.BasePresenterActivity;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -103,6 +107,26 @@ public class SplashActivity extends BasePresenterActivity<ISplashPresenter> impl
                 startActivity(i);
             }
         }, HANDLER_DELAY);
+    }
+
+    @Override
+    public void getBanksSuccess(List<Bancos> bancosList) {
+
+    }
+
+    @Override
+    public void getBinesSuccess(List<Bines> binesList) {
+
+    }
+
+    @Override
+    public void setInsertSuccess() {
+
+    }
+
+    @Override
+    public void successLoadImagen() {
+
     }
 
     @Override

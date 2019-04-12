@@ -21,8 +21,13 @@ public class RequestContract {
     public static final String GET_PROMOTERS                = "/ObtenerListaPromotores";
     public static final String GET_INICIATIVAS              = "/ObtenerCatalogoIniciativas";
     public static final String POST_VALIDAUSER              = "/ValidarUsuario";
+    public static final String POST_VALIDAIDP               = "/ValidaIDPAcreditado";
+    public static final String POST_INSERTADATOS              = "/InsertaDomiciliacionPago";
     public static final String POST_RESETEAPASS              = "/ResetearContrasenia";
     public static final String GET_TIENDAS                  = "/ObtenerCatalogoTiendas";
+    public static final String GET_BANCOS                  = "/ObtenerCatalogoBancos";
+    public static final String GET_BINES                  = "/ObtenerCatalogoBines";
+    public static final String GET_LOAD_IMG                  = "/CargarImagenDomiciliacion";
     public static final String DO_CREDIT_REQUEST_REGISTER   = "/RegistrarSolicitudCredito";
     public static final String DOCUMENT_UPLOAD              = "/CargarDocumento";
     public static final String SEND_SMS_CONFIRMATION        = "/SendSMSConfirmation";

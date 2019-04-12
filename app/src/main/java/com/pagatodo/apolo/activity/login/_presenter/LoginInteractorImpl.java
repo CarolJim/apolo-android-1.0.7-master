@@ -11,9 +11,11 @@ import com.pagatodo.apolo.activity.login._presenter._interfaces.LoginInteractor;
 import com.pagatodo.apolo.data.local.Preferences;
 import com.pagatodo.apolo.data.model.webservice.request.IniciativasRequest;
 import com.pagatodo.apolo.data.model.webservice.request.ResetContraseniaRequest;
+import com.pagatodo.apolo.data.model.webservice.request.ValidaIDPRequest;
 import com.pagatodo.apolo.data.model.webservice.request.ValidaUserRequest;
 import com.pagatodo.apolo.data.model.webservice.response.GetPromotersResponse;
 import com.pagatodo.apolo.data.model.webservice.response.ResetContraseniaResponse;
+import com.pagatodo.apolo.data.model.webservice.response.ValidateIdpResponse;
 import com.pagatodo.apolo.data.model.webservice.response.ValidateUserResponse;
 import com.pagatodo.apolo.data.remote.BuildRequest;
 import com.pagatodo.apolo.data.room.DatabaseManager;
@@ -27,7 +29,12 @@ import java.util.concurrent.ExecutionException;
 
 import static com.pagatodo.apolo.data.remote.RequestContract.GET_PROMOTERS;
 import static com.pagatodo.apolo.data.remote.RequestContract.POST_RESETEAPASS;
+import static com.pagatodo.apolo.data.remote.RequestContract.POST_VALIDAIDP;
 import static com.pagatodo.apolo.data.remote.RequestContract.POST_VALIDAUSER;
+import static com.pagatodo.apolo.utils.Constants.IDP;
+import static com.pagatodo.apolo.utils.Constants.ID_CLIENTE;
+import static com.pagatodo.apolo.utils.Constants.NOMBRE_PROCESOIDP;
+import static com.pagatodo.apolo.utils.Constants.SOLICITUD_IMPRESA;
 import static com.pagatodo.networkframework.UtilsNet.isOnline;
 import static com.pagatodo.networkframework.model.ResponseConstants.RESPONSE_CODE_OK;
 
@@ -85,6 +92,15 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
     }
 
     @Override
+    public void onValidateIdp(String username, onLoginListener listener) {
+        if (isOnline(this.context)){
+            BuildRequest.validateIdpRequest(this, new ValidaIDPRequest(username));
+            this.listener = listener;
+        }
+
+    }
+
+    @Override
     public void onChangePass(int idPromo, String pass, String imei, boolean resetcontr, String user, onLoginListener listener) {
         if (isOnline(this.context)) {
             BuildRequest.RessetContraseniaRequest(this, new ResetContraseniaRequest(idPromo, pass, imei,resetcontr,user));
@@ -105,10 +121,37 @@ public class LoginInteractorImpl implements LoginInteractor, IRequestResult  { /
                 case POST_RESETEAPASS:
                     prosesResetPassUserResponse( (ResetContraseniaResponse) dataManager.getData());
                 break;
+                case POST_VALIDAIDP:
+                    prosesValidateIDPResponse( (ValidateIdpResponse) dataManager.getData());
+                break;
 
             }
         }
 
+
+    }
+
+    private void prosesValidateIDPResponse(ValidateIdpResponse data) {
+        ValidateIdpResponse element = (ValidateIdpResponse)data;
+
+        if (element.getCodigo()!=0  ){
+
+            if (listener!=null)
+                listener.failure(element.getMensaje());
+        }else {
+
+if (element.getCodigo()==0) {
+
+    App.getInstance().getPrefs().saveDataInt(IDP,element.getIDP());
+    App.getInstance().getPrefs().saveData(NOMBRE_PROCESOIDP,element.getNombre());
+    App.getInstance().getPrefs().saveDataInt(ID_CLIENTE,element.getID_Cliente());
+    App.getInstance().getPrefs().saveData(SOLICITUD_IMPRESA,element.getSolicitudImpresa());
+    listener.onSuccessValidIDP();
+
+
+}
+
+        }
 
     }
 

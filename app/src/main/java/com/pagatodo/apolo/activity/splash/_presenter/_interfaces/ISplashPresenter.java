@@ -13,4 +13,12 @@ public interface ISplashPresenter extends IProcessData {
     void getIniciativasList();
 
     void getTiendasList();
+
+    void getBancosList();
+
+    void getBinesList();
+
+    void loadFrontCard(String Nombre ,String DocumentoBase64,int Longitud,String SolicitudImpresa,int IDP);
+
+    void InsertDomiciliacionPago();
 }

@@ -15,6 +15,16 @@ import java.util.List;
  */
 
 public final class Constants {
+//proces IDP
+    public static final String IDP = "IDP";
+    public static final String NOMBRE_PROCESOIDP = "NOMBRE_PROCESOIDP";
+    public static final String BANCONOMBRE = "BANCONOMBRE";
+    public static final String ID_BANCO = "ID_BANCO";
+    public static final String NUM_TARJETA = "NUM_TARJETA";
+    public static final String ID_CLIENTE = "ID_CLIENTE";
+    public static final String SOLICITUD_IMPRESA = "SOLICITUD_IMPRESA";
+
+
 
     //Enable debug logs
     public static final boolean DEBUG = true;

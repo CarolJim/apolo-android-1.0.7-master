@@ -71,6 +71,19 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
     }
 
     @Override
+    public void validateIDP(final String numberUser) {
+        view.showProgress(getString(R.string.progress_validate));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                view.showProgress(getString(R.string.progress_validate));
+                loginInteractor.onValidateIdp(numberUser, LoginPresenterImpl.this);
+            }
+        }, TIME_TO_LOGIN);
+
+    }
+
+    @Override
     public void changePass(final int idPromo, final String pass, final String imei, final boolean resetcontr, final String user) {
 
         view.showProgress(getString(R.string.progress_login));
@@ -161,6 +174,13 @@ public class LoginPresenterImpl extends BasePresenter<LoginView> implements Logi
             createSession(pref, promotor, idIniciativa, idTienda, pass, ime);
             view.setNavigation();
 //            view.hideProgress();
+        }
+    }
+
+    @Override
+    public void onSuccessValidIDP() {
+        if (view != null) {
+            view.setNavigation();
         }
     }
 

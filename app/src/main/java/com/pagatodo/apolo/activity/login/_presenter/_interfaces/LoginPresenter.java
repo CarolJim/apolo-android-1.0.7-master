@@ -19,6 +19,9 @@ public interface LoginPresenter extends IProcessData {
 
     void loginNew(String numberUser, String passuser, String imei);
 
+    //NUEVO METODO//
+    void validateIDP(String numberUser);
+
     void changePass(int idPromo ,String pass, String imei, boolean resetcontr, String user);
 
     boolean promotorExists(String promotor);

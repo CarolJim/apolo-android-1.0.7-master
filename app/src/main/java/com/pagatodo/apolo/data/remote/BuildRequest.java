@@ -13,18 +13,26 @@ import com.pagatodo.apolo.data.model.webservice.request.CheckIdpRequest;
 import com.pagatodo.apolo.data.model.webservice.request.CreditRequestRegisterRequest;
 import com.pagatodo.apolo.data.model.webservice.request.DocumentUploadRequest;
 import com.pagatodo.apolo.data.model.webservice.request.IniciativasRequest;
+import com.pagatodo.apolo.data.model.webservice.request.InsertDomiPagoRequest;
+import com.pagatodo.apolo.data.model.webservice.request.LoadImageRequest;
 import com.pagatodo.apolo.data.model.webservice.request.ResetContraseniaRequest;
 import com.pagatodo.apolo.data.model.webservice.request.SMSCodeValidationRequest;
 import com.pagatodo.apolo.data.model.webservice.request.SMSValidationRequest;
 import com.pagatodo.apolo.data.model.webservice.request.TiendasRequest;
+import com.pagatodo.apolo.data.model.webservice.request.ValidaIDPRequest;
 import com.pagatodo.apolo.data.model.webservice.request.ValidaUserRequest;
 import com.pagatodo.apolo.data.model.webservice.response.CheckIdpResponse;
 import com.pagatodo.apolo.data.model.webservice.response.CreditRequestRegisterResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GeneralServiceResponse;
+import com.pagatodo.apolo.data.model.webservice.response.GetBancosResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GetIniciativasResponse;
 import com.pagatodo.apolo.data.model.webservice.response.GetPromotersResponse;
+import com.pagatodo.apolo.data.model.webservice.response.GetResponseBines;
 import com.pagatodo.apolo.data.model.webservice.response.GetTiendasResponse;
+import com.pagatodo.apolo.data.model.webservice.response.InsertDomiPagoResponse;
+import com.pagatodo.apolo.data.model.webservice.response.LoadImageResponse;
 import com.pagatodo.apolo.data.model.webservice.response.ResetContraseniaResponse;
+import com.pagatodo.apolo.data.model.webservice.response.ValidateIdpResponse;
 import com.pagatodo.apolo.data.model.webservice.response.ValidateUserResponse;
 import com.pagatodo.apolo.data.remote.notifications.model.webservice.mega.GetPushStatus;
 import com.pagatodo.apolo.data.remote.notifications.model.webservice.mega.MegaBaseModel;
@@ -45,7 +53,10 @@ import static com.android.volley.Request.Method.POST;
 import static com.pagatodo.apolo.data.remote.RequestContract.CHECK_IDP;
 import static com.pagatodo.apolo.data.remote.RequestContract.DOCUMENT_UPLOAD;
 import static com.pagatodo.apolo.data.remote.RequestContract.DO_CREDIT_REQUEST_REGISTER;
+import static com.pagatodo.apolo.data.remote.RequestContract.GET_BANCOS;
+import static com.pagatodo.apolo.data.remote.RequestContract.GET_BINES;
 import static com.pagatodo.apolo.data.remote.RequestContract.GET_INICIATIVAS;
+import static com.pagatodo.apolo.data.remote.RequestContract.GET_LOAD_IMG;
 import static com.pagatodo.apolo.data.remote.RequestContract.GET_PROMOTERS;
 import static com.pagatodo.apolo.data.remote.RequestContract.GET_REMOTE_CONFIG;
 import static com.pagatodo.apolo.data.remote.RequestContract.GET_TIENDAS;
@@ -54,7 +65,9 @@ import static com.pagatodo.apolo.data.remote.RequestContract.MEGA_GET_PUSH_STATU
 import static com.pagatodo.apolo.data.remote.RequestContract.MEGA_OBTENER_MSJ_INBOX;
 import static com.pagatodo.apolo.data.remote.RequestContract.MEGA_REGISTER_DEVICE;
 import static com.pagatodo.apolo.data.remote.RequestContract.MEGA_REGISTER_USER;
+import static com.pagatodo.apolo.data.remote.RequestContract.POST_INSERTADATOS;
 import static com.pagatodo.apolo.data.remote.RequestContract.POST_RESETEAPASS;
+import static com.pagatodo.apolo.data.remote.RequestContract.POST_VALIDAIDP;
 import static com.pagatodo.apolo.data.remote.RequestContract.POST_VALIDAUSER;
 import static com.pagatodo.apolo.data.remote.RequestContract.SEND_SMS_CONFIRMATION;
 import static com.pagatodo.apolo.data.remote.RequestContract.SMS_CODE_VALIDATION;
@@ -187,12 +200,40 @@ public class BuildRequest {
                 LOG_DEBUG,
                 POST_VALIDAUSER,
                 POST,
-                null,
+                App.getInstance().getPrefs().getHeaders(),
                 RemoteConfig.getUrlServer() + POST_VALIDAUSER,
                 body,
                 result,
                 TIMEOUT,
                 ValidateUserResponse.class);
+    }
+
+    public static void validateIdpRequest(IRequestResult result, ValidaIDPRequest body){
+        new RequestBuilder().requestPinning(App.getInstance(),
+                R.raw.pagatodo,
+                LOG_DEBUG,
+                POST_VALIDAIDP,
+                POST,
+                App.getInstance().getPrefs().getHeaders(),
+                RemoteConfig.getUrlServer() + POST_VALIDAIDP,
+                body,
+                result,
+                TIMEOUT,
+                ValidateIdpResponse.class);
+    }
+
+    public static void insertaDatosRequest(IRequestResult result, InsertDomiPagoRequest body){
+        new RequestBuilder().requestPinning(App.getInstance(),
+                R.raw.pagatodo,
+                LOG_DEBUG,
+                POST_INSERTADATOS,
+                POST,
+                App.getInstance().getPrefs().getHeaders(),
+                RemoteConfig.getUrlServer() + POST_INSERTADATOS,
+                body,
+                result,
+                TIMEOUT,
+                InsertDomiPagoResponse.class);
     }
 
     public static void RessetContraseniaRequest(IRequestResult result, ResetContraseniaRequest body) {
@@ -221,6 +262,46 @@ public class BuildRequest {
                 result,
                 TIMEOUT,
                 GetTiendasResponse.class);
+    }
+
+    public static void getBancosRequest(IRequestResult result, TiendasRequest body) {
+        new RequestBuilder().requestPinning(App.getInstance(),
+                R.raw.pagatodo,
+                LOG_DEBUG,
+                GET_BANCOS,
+                POST,
+                App.getInstance().getPrefs().getHeaders(),
+                RemoteConfig.getUrlServer() + GET_BANCOS,
+                body,
+                result,
+                TIMEOUT,
+                GetBancosResponse.class);
+    }
+    public static void getBeansRequest(IRequestResult result, TiendasRequest body) {
+        new RequestBuilder().requestPinning(App.getInstance(),
+                R.raw.pagatodo,
+                LOG_DEBUG,
+                GET_BINES,
+                POST,
+                App.getInstance().getPrefs().getHeaders(),
+                RemoteConfig.getUrlServer() + GET_BINES,
+                body,
+                result,
+                TIMEOUT,
+                GetResponseBines.class);
+    }
+    public static void loadImage(IRequestResult result, LoadImageRequest body) {
+        new RequestBuilder().requestPinning(App.getInstance(),
+                R.raw.pagatodo,
+                LOG_DEBUG,
+                GET_LOAD_IMG,
+                POST,
+                App.getInstance().getPrefs().getHeaders(),
+                RemoteConfig.getUrlServer() + GET_LOAD_IMG,
+                body,
+                result,
+                TIMEOUT,
+                LoadImageResponse.class);
     }
 
     public static void doCreditRequestRegister(IRequestResult result, CreditRequestRegisterRequest body, HashMap<String, String> headers) {

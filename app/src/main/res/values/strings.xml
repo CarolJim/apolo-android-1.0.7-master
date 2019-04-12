@@ -24,6 +24,7 @@
     <string name="txt_button_domi">DOMICILIAR PAGO</string>
     <string name="txt_button_login">INGRESAR</string>
     <string name="txt_button_end">FINALIZAR</string>
+    <string name="txt_button_save">GUARDAR</string>
     <string name="txt_button_reenviar">REENVIAR</string>
     <string name="txt_btn_reintent">REINTENTAR</string>
     <string name="txt_btn_validate">VALIDAR IDP</string>
@@ -69,6 +70,8 @@
     <string name="msg_update_afiliados">Actualizando Promotores.</string>
     <string name="msg_update_iniciativas">Actualizando Iniciativas.</string>
     <string name="msg_update_tiendas">Actualizando Tiendas.</string>
+    <string name="msg_update_bancos">Obteniendo Bancos.</string>
+    <string name="msg_update_datos">Guardando Datos.</string>
     <string name="not_internet">Sin Internet</string>
     <string name="error">Error</string>
     <string name="delete">Eliminar</string>
@@ -130,6 +133,7 @@
     <string name="progress_validate_card">Validando Tarjeta…</string>
     <string name="progress_registrando_usuario">Registrando Usuario…</string>
     <string name="progress_login">Iniciando Sesión…</string>
+    <string name="progress_validate">Validando IDP…</string>
     <string name="progress_logout">Saliendo…</string>
     <string name="txt_progressText">Espera por Favor</string>
     <string name="progress_send_code">Enviando Código de Verificación</string>
@@ -193,4 +197,9 @@
     <string name="error_min_idp">El IDP es muy Corto</string>
     <string name="validate_idp_message">Validando IDP</string>
     <string name="ingresa_una_nueva_contrase_a">INGRESA UNA NUEVA CONTRASEÑA</string>
+    <string name="nombre">NOMBRE:</string>
+    <string name="idp">IDP:</string>
+    <string name="confirma_numero_de_tarjeta">Confirma Número de Tarjeta</string>
+    <string name="numero_de_tarjeta">Número de Tarjeta (16 Dígitos)</string>
+    <string name="banco">BANCO:</string>
 </resources>

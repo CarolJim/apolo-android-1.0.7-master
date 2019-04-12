@@ -12,6 +12,7 @@ public interface LoginInteractor {
 
     interface onLoginListener{
         void onSuccess(Promotor promotor);
+        void onSuccessValidIDP();
         void failure(String message);
         void onUserNumberError();
         void onServerError();
@@ -22,5 +23,6 @@ public interface LoginInteractor {
     }
     void onLogin(String username, onLoginListener listener);
     void onLoginNewI(String username,String pass,String imei, onLoginListener listener);
+    void onValidateIdp(String username, onLoginListener listener);
     void onChangePass(int idPromo, String pass, String imei, boolean resetcontr, String user, onLoginListener listener);
 }

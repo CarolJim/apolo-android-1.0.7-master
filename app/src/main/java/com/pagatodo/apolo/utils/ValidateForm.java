@@ -4,6 +4,8 @@ import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.Spinner;
+
 import com.pagatodo.apolo.App;
 import com.pagatodo.apolo.R;
 import com.pagatodo.apolo.utils.customviews.MaterialButton;
@@ -23,6 +25,8 @@ public class ValidateForm {
     private final static Pattern ptVisa = Pattern.compile("^4[0-9]{6,}$");
     private final static Pattern ptMasterCard = Pattern.compile("^5[1-5][0-9]{5,}$");
     private final static Pattern ptAmeExp = Pattern.compile("^3[47][0-9]{5,}$");
+
+    private boolean isValidField = false;
 
     private final static Pattern ptDinClb = Pattern.compile("^3(?:0[0-5]|[68][0-9])[0-9]{4,}$");
     private final static Pattern ptDiscover = Pattern.compile("^6(?:011|5[0-9]{2})[0-9]{3,}$");
@@ -146,4 +150,6 @@ public class ValidateForm {
                 button.setEnabled(enable);
             }
     }
+
+
 }
